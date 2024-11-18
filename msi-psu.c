@@ -318,18 +318,18 @@ static int msipsu_get_value(struct msipsu_data *priv, u8 cmd, long *val)
 		*val = msipsu_lin11_to_int(tmp16, 1000000, true);
 		break;
 	case PSU_REG_FAN_MODE:
-	    switch (data[0]) {
+		switch (data[0]) {
 		case FAN_MODE_AUTO:
 		    *val = 2;
-		    break;
+			break;
 		case FAN_MODE_MANUAL:
 		    *val = 1;
-		    break;
+			break;
 		default:
 		    *val = 0xff;
-		    break;
-	    }
-	    break;
+			break;
+		}
+		break;
 	case PSU_REG_FAN_DUTY_CYCLE:
 	case PSU_REG_TOTAL_UPTIME:
 	case PSU_REG_UPTIME:
